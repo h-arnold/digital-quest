@@ -40,8 +40,8 @@ jobs:
           path: |
             index.html
             documentation.html
-            src/css/
-            src/js/
+            src/css/*
+            src/js/*
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

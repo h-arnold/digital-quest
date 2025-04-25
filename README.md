@@ -21,7 +21,7 @@ Digital Quest transforms GCSE Digital Technology curriculum content into an enga
 
 ## Live Demo
 
-The game is deployed and accessible at: [https://jyxpndjr.manus.space](https://jyxpndjr.manus.space)
+The game is deployed and accessible at: [https://h-arnold.github.io/digital-quest/](https://h-arnold.github.io/digital-quest/)
 
 ## Project Structure
 
@@ -54,6 +54,7 @@ The game is deployed and accessible at: [https://jyxpndjr.manus.space](https://j
 ### Local Development
 
 1. Clone this repository:
+
    ```
    git clone <repository-url>
    cd digital-quest
@@ -62,6 +63,7 @@ The game is deployed and accessible at: [https://jyxpndjr.manus.space](https://j
 2. Open the project in your favorite code editor
 
 3. Start a local server:
+
    ```
    python -m http.server 8000
    ```

@@ -36,8 +36,13 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          # Include only necessary files and directories for deployment
+          path: |
+            index.html
+            documentation.html
+            css/
+            js/
+            images/
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

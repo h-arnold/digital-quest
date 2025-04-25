@@ -18,6 +18,12 @@
             <p>A Zork-style text adventure for learning GCSE Digital Technology concepts</p>
         </header>
 
+        <div class="save-load-buttons" style="text-align: center; margin: 10px 0;">
+            <button id="save-game-btn">Save Game</button>
+            <button id="load-game-btn">Load Game</button>
+            <input type="file" id="load-game-file" accept=".json" style="display: none;">
+        </div>
+
         <div class="game-container">
             <div class="terminal">
                 <div id="game-output">Loading game...</div>
@@ -38,13 +44,6 @@
                     <ul id="player-inventory">
                         <li class="empty-inventory">Your inventory is empty</li>
                     </ul>
-                </div>
-
-                <div class="save-load-panel">
-                    <h2>Save/Load Game</h2>
-                    <button id="save-game-btn">Save Game</button>
-                    <button id="load-game-btn">Load Game</button>
-                    <input type="file" id="load-game-file" accept=".json" style="display: none;">
                 </div>
             </div>
         </div>

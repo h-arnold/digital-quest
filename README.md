@@ -2,6 +2,10 @@
 
 A Zork-style text adventure game designed to help students revise GCSE Digital Technology concepts through interactive gameplay.
 
+## ⚠️ This game goes beyond even vibe-coding - it's been created entirely using [Manus AI](https://manus.im) ⚠️
+
+As such, you run the game at your own risk. I'm fully expecting that things won't be perfect and changes will need to be made. Please submit PRs with anything you find!
+
 ## Overview
 
 Digital Quest transforms GCSE Digital Technology curriculum content into an engaging text adventure game. Students navigate through different areas representing curriculum topics, interact with educational NPCs, solve challenges, and collect items - all while learning key concepts from the syllabus.

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documentation for the Digital Quest GCSE Digital Technology text adventure game">
+    <meta name="keywords" content="GCSE, Digital Technology, Text Adventure, Educational Game, Documentation">
+    <meta name="author" content="Digital Quest">
+    <title>Digital Quest: Documentation</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    <style>
+        body {
+            padding: 30px;
+        }
+        .doc-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: rgba(0, 20, 0, 0.3);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        h1, h2, h3 {
+            color: var(--highlight-color);
+        }
+        a {
+            color: var(--item-color);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        code {
+            background-color: var(--terminal-bg);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        pre {
+            background-color: var(--terminal-bg);
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border: 1px solid var(--secondary-color);
+        }
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            background-color: var(--secondary-color);
+            color: var(--terminal-bg);
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-button:hover {
+            background-color: var(--highlight-color);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="doc-container">
+        <a href="index.html" class="back-button">← Back to Game</a>
+        
+        <div id="documentation-content">
+            <!-- Documentation content will be inserted here -->
+            Loading documentation...
+        </div>
+    </div>
+
+    <script>
+        // Fetch and display the documentation content
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('documentation.md')
+                .then(response => response.text())
+                .then(text => {
+                    // Simple markdown to HTML conversion
+                    let html = text
+                        // Convert headers
+                        .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+                        .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+                        .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+                        // Convert code blocks
+                        .replace(/```([^`]+)```/g, '<pre><code>$1</code></pre>')
+                        // Convert inline code
+                        .replace(/`([^`]+)`/g, '<code>$1</code>')
+                        // Convert links
+                        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+                        // Convert lists
+                        .replace(/^\- (.*$)/gm, '<li>$1</li>')
+                        // Wrap lists
+                        .replace(/<li>(.*)<\/li>\n<li>/g, '<li>$1</li>\n<li>')
+                        .replace(/<li>(.*)<\/li>\n(?!<li>)/g, '<li>$1</li></ul>\n')
+                        .replace(/(?<!<\/ul>\n)<li>/g, '<ul><li>')
+                        // Convert paragraphs
+                        .replace(/^(?!<[uh]|<li|<pre)(.+$)/gm, '<p>$1</p>');
+                    
+                    document.getElementById('documentation-content').innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Error loading documentation:', error);
+                    document.getElementById('documentation-content').innerHTML = 
+                        '<h1>Error Loading Documentation</h1><p>Sorry, there was an error loading the documentation. Please try again later.</p>';
+                });
+        });
+    </script>
+</body>
+</html>

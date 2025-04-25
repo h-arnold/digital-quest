@@ -1,0 +1,46 @@
+# Digital Quest Deployment Configuration
+
+# This file contains configuration for deploying the Digital Quest game
+# to a static website hosting service.
+
+# Site settings
+site_name: Digital Quest
+site_description: A Zork-style text adventure game for learning GCSE Digital Technology concepts
+site_author: Digital Quest Team
+
+# Build settings
+use_directory_urls: false
+strict: true
+
+# Navigation
+nav:
+  - Home: index.html
+  - Documentation: documentation.html
+
+# Theme customization
+theme:
+  name: custom
+  custom_dir: .
+  static_templates:
+    - 404.html
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+
+# Extra files to include
+extra_css:
+  - css/style.min.css
+
+# SEO
+extra:
+  social:
+    - icon: education
+      link: https://example.com/gcse-digital-technology
+  search:
+    language: en
+  analytics:
+    provider: custom

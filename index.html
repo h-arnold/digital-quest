@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Zork-style text adventure game for learning GCSE Digital Technology concepts">
+    <meta name="keywords" content="GCSE, Digital Technology, Text Adventure, Educational Game, Revision">
+    <meta name="author" content="Digital Quest">
+    <title>Digital Quest: GCSE Digital Technology Adventure</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Digital Quest: GCSE Digital Technology Adventure</h1>
+            <p>A Zork-style text adventure for learning GCSE Digital Technology concepts</p>
+        </header>
+
+        <div class="game-container">
+            <div class="terminal">
+                <div id="game-output">Loading game...</div>
+            </div>
+
+            <div class="sidebar">
+                <div class="stats-panel">
+                    <h2>Player Stats</h2>
+                    <div id="player-stats">
+                        <p>Location: <span id="player-location">--</span></p>
+                        <p>Health: <span id="player-health">100</span></p>
+                        <p>Score: <span id="player-score">0</span></p>
+                    </div>
+                </div>
+
+                <div class="inventory-panel">
+                    <h2>Inventory</h2>
+                    <ul id="player-inventory">
+                        <li class="empty-inventory">Your inventory is empty</li>
+                    </ul>
+                </div>
+
+                <div class="save-load-panel">
+                    <h2>Save/Load Game</h2>
+                    <button id="save-game-btn">Save Game</button>
+                    <button id="load-game-btn">Load Game</button>
+                    <input type="file" id="load-game-file" accept=".json" style="display: none;">
+                </div>
+            </div>
+        </div>
+
+        <form id="game-form" class="command-input">
+            <span class="prompt">&gt;</span>
+            <input type="text" id="game-input" autocomplete="off" autofocus placeholder="Type your command here...">
+            <button type="submit">Enter</button>
+        </form>
+
+        <footer>
+            <p>Created as a revision aid for GCSE Digital Technology students</p>
+            <p><a href="documentation.html" target="_blank" style="color: var(--secondary-color);">Game Documentation</a></p>
+        </footer>
+    </div>
+
+    <!-- Load game scripts -->
+    <!-- Models -->
+    <script src="js/models/GameState.js"></script>
+    <script src="js/models/Location.js"></script>
+    <script src="js/models/Item.js"></script>
+    <script src="js/models/NPC.js"></script>
+    <script src="js/models/Challenge.js"></script>
+    <script src="js/models/DangerScenario.js"></script>
+    
+    <!-- Data -->
+    <script src="js/data/locations.js"></script>
+    <script src="js/data/items.js"></script>
+    <script src="js/data/npcs.js"></script>
+    <script src="js/data/challenges.js"></script>
+    <script src="js/data/danger_scenarios.js"></script>
+    
+    <!-- Utils -->
+    <script src="js/utils/Parser.js"></script>
+    <script src="js/utils/StorageManager.js"></script>
+    <script src="js/utils/GameDataLoader.js"></script>
+    <script src="js/utils/GameDataIntegrator.js"></script>
+    
+    <!-- Views -->
+    <script src="js/views/TerminalView.js"></script>
+    <script src="js/views/InventoryView.js"></script>
+    <script src="js/views/StatsView.js"></script>
+    
+    <!-- Controllers -->
+    <script src="js/controllers/CommandController.js"></script>
+    <script src="js/controllers/UIController.js"></script>
+    <script src="js/controllers/SaveLoadController.js"></script>
+    <script src="js/controllers/GameController.js"></script>
+    
+    <!-- Game Engine -->
+    <script src="js/GameEngine.js"></script>
+    
+    <!-- Main -->
+    <script src="js/main.js"></script>
+</body>
+</html>

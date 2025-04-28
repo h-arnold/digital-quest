@@ -72,19 +72,16 @@ class GameEngine {
    */
   displayWelcomeMessage() {
     const welcomeMessage = `
-Welcome to Digital Quest: A GCSE Digital Technology Adventure!
+  Welcome to Digital Quest: A GCSE Digital Technology Adventure!
+  You're in the Central Hub of the Digital Realm, where computing concepts take physical form. Explore this world, solve challenges, and learn about digital technology.
+  During your journey, you'll find:
+  - Locations representing digital technology areas
+  - Educational items with key concepts
+  - NPCs offering knowledge quizzes
+  - Challenges testing your understanding
 
-You find yourself at the Central Hub of the Digital Realm, a strange and whimsical world where abstract computing concepts have taken physical form. Your mission is to explore this realm, solve challenges, and learn about digital technology along the way.
-
-As you journey through this world, you'll encounter:
-- Various locations representing different areas of digital technology
-- Educational items that teach you about key concepts
-- NPCs who can quiz you on your knowledge
-- Challenges that test your understanding
-- Dangerous scenarios with humorous consequences
-
-Type 'help' to see available commands.
-`;
+  Type 'help' for commands.
+  `;
     this.uiController.displayMessage(welcomeMessage);
   }
 
